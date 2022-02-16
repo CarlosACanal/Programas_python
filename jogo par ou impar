@@ -1,0 +1,30 @@
+import random
+print('VAMOS JOGAR PAR OU IMPAR')
+print(13*'=-')
+cont=0
+while True:
+    computador= random.randint(1,51)
+    jogador=int(input('Informe um valor entre 01 e 50:'))
+    opcao=str(input('Par ou Impar? [P/I]')) .lower() .strip()[0]
+    while opcao not in 'pi':
+        opcao = str(input('Par ou Impar? [P/I]')).lower().strip()[0]
+    print(40*'-')
+    soma= computador + jogador
+    if soma % 2 == 0:
+        print(f'Você jogou {jogador} e o computador jogou {computador}. Total da soma é {soma} e esse é um núemro PAR.')
+        if opcao=='p':
+            print('Você venceu! Vamos jogar novamente!')
+            cont+=1
+        else:
+            print('Você perdeu!')
+            break
+    else:
+        print(f'Você jogou {jogador} e o computador jogou {computador}. Total da soma é {soma} e esse é um núemro IMPAR.')
+        if opcao=='i':
+            print('Você venceu! Vamos jogar novamente!')
+            cont+=1
+        else:
+            print('Você perdeu!')
+            break
+    print(40 * '-')
+print(f'GAME OVER! Você venceu {cont} vezes.')
